@@ -1,0 +1,24 @@
+1. 
+SELECT students.name, students.surname, degrees.name AS "degree name"
+FROM students
+JOIN degrees
+ON students.degree_id = degrees.id
+WHERE degrees.name = "Corso di laurea in economia";
+
+
+3.
+SELECT teacher.name WHERE id = 44, courses.name
+FROM teachers 
+JOIN courses
+ON teachers.name = course.name
+WHERE teachers.name = "Fulvio";
+
+5.
+SELECT degrees.name AS "Corso di laurea", degrees.level, courses.name AS "nome corso", teachers.surname, teachers.name
+FROM degrees
+JOIN courses
+ON courses.degree_id = degrees.id
+JOIN course_teacher
+ON course_teacher.course_id = courses.id
+JOIN teachers
+ON teachers.id = course_teacher.teacher_id;
